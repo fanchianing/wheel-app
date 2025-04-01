@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>舊城國小蓮潭路跑使命必站轉轉樂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5d4037">
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      text-align: center;
+      background: #fefae0;
+      color: #4e342e;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      font-size: 22px;
+      margin: 20px 10px 10px;
+    }
+    button {
+      background-color: #6d4c41;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>舊城國小蓮潭路跑使命必站轉轉樂</h1>
+  <p>點按下方按鈕測試語音播放</p>
+  <button onclick="speak()">播放語音</button>
+
+  <script>
+    function speak() {
+      try {
+        window.speechSynthesis.cancel(); // 防止重複
+        const msg = new SpeechSynthesisUtterance("你好，歡迎參加舊城國小蓮潭路跑志工活動！");
+        msg.lang = "zh-TW";
+        window.speechSynthesis.speak(msg);
+      } catch (e) {
+        alert("語音播放失敗：" + e);
+      }
+    }
+  </script>
+</body>
+</html>
